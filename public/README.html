@@ -1,0 +1,42 @@
+<h1 align='center'>
+  AIMjs
+</h1>
+
+<h2 id="what-is-aimjs-">What is AIMjs ?</h2>
+<p>AIMjs is a javascript library designed to build AI using a standard tree of states system.
+Popular algorithms like breadth-first, depth-first or A* are implemented and easy to use.
+Take a look at our examples to discover the power of AIMjs.</p>
+<h2 id="quickstart">Quickstart</h2>
+<ul>
+<li><p>First set up your project by including <strong>AIM.js</strong>, form this just run <code>npm install --save aimjs</code> and include it as any npm package <code>var AIM = require(&#39;aimjs&#39;)</code>. Set a public path to the module to use it client side <code>app.use(&#39;/AIM&#39;, express.static(__dirname + &#39;/node_modules/aimjs&#39;))</code> (or just move the file somewhere) and include it in your html page <code>&lt;script type=&#39;text/javascript&#39; src=&#39;/AIM/AIM.min.js&#39;&gt;&lt;/script&gt;</code>.
+A beautiful tree with all explored state can be a good way to find bugs or optimize a AI, to use this feature you need to include <strong>Treant.js</strong>, <strong>raphael.js</strong> and <strong>Treant.css</strong>.</p>
+</li>
+<li><p>Now you have to think about how to represents a state, AIMjs can&#39;t do this for you.
+In this example we will take a glass reversing game : there are 7 glasses, some of them are upside-down, our state will be an array of bits with 0 for an upside-down glass. So our initial state is <code>[0, 1, 0, 0, 1, 0, 1]</code> and our final state is <code>[1, 1, 1, 1, 1, 1, 1]</code>.</p>
+</li>
+<li><p>Next step is to create a function <code>getSuccessors(state)</code> that return a array which contains all successors of the state passed as parameter. In our case we can reverse only two adjacent glass so we have 6 successors for each case (reverse glass 0 and 1, 1 and 2, ..., 5 and 6). The function is :</p>
+<pre><code>var getSuccessors = function (state) {
+  var successors = []
+
+  for(var i = 0; i &lt; state.length - 1; i++){
+    var newState = AIM.clone(state);
+
+    newState[i] = (newState[i] + 1) % 2
+    newState[i + 1] = (newState[i + 1] + 1) % 2
+    successors.push(newState)
+  }
+
+  return successors
+}
+</code></pre></li>
+<li><p>Now the hardest part is done we just have to instanciate and run the AI :</p>
+<pre><code>var glassReverseAI = AIM.AI({
+  initState: [0, 1, 0, 0, 1, 0, 1],
+  finalState: [1, 1, 1, 1, 1, 1, 1],
+  getSuccessors: getSuccessors
+})
+var result = glassReverseAI.execute(&#39;breadth-first&#39;)
+result.print()
+</code></pre></li>
+</ul>
+<p>There are multiples example, 8-puzzle is a perfect AI to understand how AIMjs work and how to use A* with a specified heuristic and draw a tree.</p>

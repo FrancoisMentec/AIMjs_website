@@ -1,0 +1,19 @@
+.grid {
+  width: 60px;
+  height: 60px;
+}
+
+.tile {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: #009688;
+  color: white;
+  vertical-align: top;
+}
+
+.tile.empty {
+  background-color: #80CBC4;
+}

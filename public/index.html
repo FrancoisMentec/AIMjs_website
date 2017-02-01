@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>AIMjs</title>
+    <!-- CSS -->
+    <link rel='stylesheet' href='/css/components.css'>
+    <link rel='stylesheet' href='/css/Treant.css'>
+    <link rel='stylesheet' href='/css/AIM.css'>
+    <link rel='stylesheet' href='/css/navBar.css'>
+    <link rel='stylesheet' href='/css/home.css'>
+    <link rel='stylesheet' href='/css/examples.css'>
+    <link rel='stylesheet' href='/css/8-puzzle.css'>
+    <!-- JS -->
+    <script type='text/javascript' src='/js/jquery-3.1.1.min.js'></script>
+    <script type='text/javascript' src='/js/components.js'></script>
+    <script type='text/javascript' src='/js/ace/ace.js'></script>
+    <script type='text/javascript' src='/js/angular.min.js'></script>
+		<script type='text/javascript' src='/js/angular-route.js'></script>
+    <!-- Treant -->
+    <script type='text/javascript' src='/js/raphael.js'></script>
+    <script type='text/javascript' src='/js/Treant.js'></script>
+    <!-- AIM -->
+    <script type='text/javascript' src='/AIM/AIM.min.js'></script>
+    <!-- AI -->
+    <script type='text/javascript' src='/js/AI-glass-reverse.js'></script>
+    <script type='text/javascript' src='/js/AI-8-puzzle.js'></script>
+    <!-- Angular -->
+		<script type='text/javascript' src='/js/app.js'></script>
+		<script type='text/javascript' src='/js/controllers/NavBarController.js'></script>
+		<script type='text/javascript' src='/js/controllers/HomeController.js'></script>
+		<script type='text/javascript' src='/js/controllers/ExamplesController.js'></script>
+		<script type='text/javascript' src='/js/controllers/GlassReverseController.js'></script>
+		<script type='text/javascript' src='/js/controllers/8PuzzleController.js'></script>
+    <base href='/'>
+  </head>
+  <body ng-app='AIM'>
+
+    <div id='nav-bar' ng-controller='NavBarController'>
+      <a ng-repeat='link in links' class='nav-link {{ link.active }}' href='{{ link.url }}' target='{{ link.target }}'>{{ link.name }}</a>
+    </div>
+
+    <div id='view' ng-view></div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+.examples {
+  width: 100%;
+  text-align: center;
+}
+
+.example-link {
+  transition: 0.2s;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border: 5px solid #3F51B5;
+  text-decoration: none;
+  color: white;
+  font-family: Roboto-Bold;
+  background-color: #3F51B5;
+  overflow: hidden;
+}
+
+.example-link:hover {
+  color: #FFEB3B;
+  border-color: #FFEB3B;
+}
+
+.example-link-image {
+  transition: 0.5s;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.example-link:hover .example-link-image {
+  transform: scale(1.1);
+}
+
+.example-link-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.example-link-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+}
+
+.example-container {
+  width: 100%;
+}
+
+.example-panel, .example-code {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.example-code {
+  width: 100%;
+  height: 100%;
+}
+
+.example-header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.example-title {
+  display: inline-block;
+  font-family: Roboto-Bold;
+  font-size: 3em;
+}
+
+.example-header button {
+  vertical-align: top;
+  margin: 12px;
+}

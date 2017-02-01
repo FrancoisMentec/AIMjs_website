@@ -1,0 +1,111 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(/font/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(/font/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(/font/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Black;
+  src: url(/font/Roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(/font/Roboto/Roboto-Thin.ttf);
+}
+
+html, body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto-Regular;
+  color: #212121;
+  background-color: #F5F5F5;
+}
+
+body {
+  padding-top: 50px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h1 {
+  font-family: Roboto-Black;
+}
+
+h2, h3, h4 {
+  font-family: Roboto-Bold;
+}
+
+strong {
+  font-weight: normal;
+  font-family: Roboto-Bold;
+}
+
+pre, code {
+  box-sizing: border-box;
+  font-family: courier;
+  background-color: #E0E0E0;
+  border-radius: 3px;
+}
+
+pre {
+  padding: 3px;
+  white-space: pre-wrap;
+}
+
+.tabs {
+  height: calc(100% - 60px)
+}
+
+.Treant {
+  height: 100%;
+}
+
+.result-success-value {
+  font-size: 1.2em;
+}
+
+.result-success-value.success {
+  color: #4CAF50;
+}
+
+.result-success-value.failure {
+  color: #F44336;
+}
+
+.result-info-name {
+  display: inline-block;
+  font-family: Roboto-Bold;
+}
+
+.state-array {
+  width: 100%;
+}
+
+.state-array-title {
+  font-size: 1.1em;
+  font-family: Roboto-Bold;
+}
+
+.state-array-content {
+  width: 100%;
+}
+
+.state {
+  display: inline-block;
+  padding: 10px;
+}
